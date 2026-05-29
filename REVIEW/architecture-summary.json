@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-05-29T09:32:44.284015+00:00",
+  "generated_by": "M3 Data Architecture Agent (Claude Code)",
+  "summary": {
+    "entities": 24,
+    "value_objects": 0,
+    "relationships": 20,
+    "api_endpoints": 0,
+    "mediatr_handlers": 0
+  },
+  "confidence_profile": {
+    "parser": "unknown",
+    "entity_confidence": "MEDIUM",
+    "relationship_confidence": "HIGH (ORM fluent) + MEDIUM (naming convention)",
+    "api_confidence": "HIGH"
+  },
+  "tech_context": {
+    "project_root": "C:\\db ai agent\\sql-server-samples-master\\samples\\databases\\northwind-pubs",
+    "languages": [],
+    "frameworks": [],
+    "orms": [],
+    "api_styles": [],
+    "architecture": "unknown",
+    "db_types": [
+      "sqlserver"
+    ],
+    "confidence": 0.4
+  },
+  "governance_summary": {
+    "total_findings": 0,
+    "pci_findings": 0,
+    "gdpr_fields": 0,
+    "severity_counts": {}
+  },
+  "validation_summary": {
+    "total_issues": 0,
+    "severity_counts": {}
+  },
+  "redundancy_summary": {
+    "total_findings": 0,
+    "actionable": 0
+  },
+  "stack": {
+    "languages": [
+      "SQL"
+    ],
+    "frameworks": [],
+    "databases": [],
+    "architecture_type": []
+  }
+}

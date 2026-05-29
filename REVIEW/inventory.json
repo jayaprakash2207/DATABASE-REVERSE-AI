@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-05-29T09:26:52.940399+00:00",
+  "source_project": "C:\\db ai agent\\sql-server-samples-master\\samples\\databases\\northwind-pubs",
+  "project_name": "northwind-pubs",
+  "total_files": 4,
+  "stack": {
+    "languages": [
+      {
+        "name": "SQL",
+        "files": 3,
+        "primary": true
+      },
+      {
+        "name": "Markdown",
+        "files": 1,
+        "primary": false
+      }
+    ],
+    "frameworks": [],
+    "databases": [],
+    "architecture_type": []
+  },
+  "file_map": {
+    "data": [
+      "instnwnd (Azure SQL Database).sql",
+      "instnwnd.sql",
+      "instpubs.sql"
+    ],
+    "business": [],
+    "integration": [],
+    "quality": [],
+    "architect": [
+      "readme.md"
+    ]
+  }
+}

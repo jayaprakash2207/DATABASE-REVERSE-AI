@@ -1,0 +1,101 @@
+{
+  "run_at": "2026-05-29T09:32:44.305857+00:00",
+  "project": "C:\\db ai agent\\sql-server-samples-master\\samples\\databases\\northwind-pubs",
+  "skip_ai": false,
+  "tree_sitter_available": true,
+  "tech_context": {
+    "project_root": "C:\\db ai agent\\sql-server-samples-master\\samples\\databases\\northwind-pubs",
+    "languages": [],
+    "frameworks": [],
+    "orms": [],
+    "api_styles": [],
+    "architecture": "unknown",
+    "db_types": [
+      "sqlserver"
+    ],
+    "confidence": 0.4
+  },
+  "project_layout": {
+    "solution_root": "C:\\db ai agent\\sql-server-samples-master\\samples\\databases\\northwind-pubs",
+    "domain_dirs": [],
+    "infra_dirs": [],
+    "api_dirs": [],
+    "web_dirs": [],
+    "layers": []
+  },
+  "extraction": {
+    "files_scanned": 4,
+    "entities": 0,
+    "value_objects": 0,
+    "relationships": 0,
+    "api_endpoints": 0,
+    "mediatr_handlers": 0,
+    "dtos": 0,
+    "page_handlers": 0,
+    "type_aliases": 0,
+    "unresolved_types": 0
+  },
+  "analysis": {
+    "governance_findings": 0,
+    "gdpr_fields": 0,
+    "pci_fields": 0,
+    "lineage_flows": 0,
+    "complete_flows": 0,
+    "gap_flows": 0,
+    "redundancy_findings": 0,
+    "actionable_findings": 0,
+    "validation_issues": 0,
+    "validation_critical": 0,
+    "validation_warnings": 0,
+    "confirmed_findings": 0,
+    "inferred_findings": 0,
+    "recommended_findings": 0
+  },
+  "ddd": {
+    "health_score": 50,
+    "aggregate_roots": 0,
+    "value_objects": 0,
+    "bc_coupling": 0,
+    "acl_count": 0
+  },
+  "roslyn": {
+    "loaded": true,
+    "types_indexed": 0,
+    "files_indexed": 0,
+    "with_inheritance": 0,
+    "with_interfaces": 0
+  },
+  "sql": {
+    "edge_count": 49,
+    "chain_count": 74,
+    "governance_findings": 75,
+    "reports": [
+      "SQL_LINEAGE_REPORT",
+      "STORED_PROCEDURE_ANALYSIS"
+    ]
+  },
+  "confidence_profile": {
+    "entities": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "relationships": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    }
+  },
+  "cache": {
+    "cached_entries": 317,
+    "cache_dir": "C:\\db ai agent\\enterprise-data-architect\\memory\\cache"
+  },
+  "outputs": {
+    "extracted": "C:\\db ai agent\\enterprise-data-architect\\memory\\extracted",
+    "enterprise_graph": "C:\\db ai agent\\enterprise-data-architect\\memory\\extracted\\enterprise_graph.json",
+    "dependency_graph": "C:\\db ai agent\\enterprise-data-architect\\memory\\extracted\\dependency_graph.json",
+    "type_resolution": "C:\\db ai agent\\enterprise-data-architect\\memory\\extracted\\type_resolution.json",
+    "analysis": "C:\\db ai agent\\enterprise-data-architect\\memory\\m3",
+    "review": "C:\\db ai agent\\enterprise-data-architect\\REVIEW"
+  }
+}
