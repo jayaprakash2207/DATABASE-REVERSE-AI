@@ -121,7 +121,7 @@ python main.py --project ../my-project --cache-dir /absolute/path/to/cache
 You can run stack discovery separately:
 
 ```bash
-python discovery.py --project /absolute/path/to/target/project
+python discovery.py --project ../my-project
 ```
 
 This writes `REVIEW/inventory.json`.
