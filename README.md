@@ -118,7 +118,7 @@ python main.py --project ../my-project --cache-dir ../cache-dir
 
 ## Discovery-only mode
 
-You can run stack discovery separately:
+Use this only when you want inventory/stack detection without running the full pipeline:
 
 ```bash
 python discovery.py --project ../my-project
