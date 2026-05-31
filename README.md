@@ -81,33 +81,33 @@ python main.py --help
 ### Run full pipeline
 
 ```bash
-python main.py --project /absolute/path/to/target/project
+python main.py --project ../my-project
 ```
 
-`--project` accepts both absolute and relative paths (for example `../my-project`).
+`--project` accepts both absolute and relative paths (e.g., `../my-project`).
 
 ### Deterministic-only run (skip AI)
 
 ```bash
-python main.py --project /absolute/path/to/target/project --skip-ai
+python main.py --project ../my-project --skip-ai
 ```
 
 ### Extraction-only run
 
 ```bash
-python main.py --project /absolute/path/to/target/project --only-extract
+python main.py --project ../my-project --only-extract
 ```
 
 ### Disable cache
 
 ```bash
-python main.py --project /absolute/path/to/target/project --no-cache
+python main.py --project ../my-project --no-cache
 ```
 
 ### Use custom cache directory
 
 ```bash
-python main.py --project /absolute/path/to/target/project --cache-dir /absolute/path/to/cache
+python main.py --project ../my-project --cache-dir /absolute/path/to/cache
 ```
 
 ## Output locations
