@@ -13,9 +13,9 @@ Primary goal: produce review-ready architecture, schema, lineage, governance, DD
 
 ## 2) What the System Produces
 After a run, the project generates artifacts in:
-- `/tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI/REVIEW` (human-facing reports)
-- `/tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI/memory/extracted` (structured extraction data)
-- `/tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI/memory/m3` (analysis intermediate outputs)
+- `<project-root>/REVIEW` (human-facing reports)
+- `<project-root>/memory/extracted` (structured extraction data)
+- `<project-root>/memory/m3` (analysis intermediate outputs)
 
 Typical outputs include:
 - `inventory.json` (project inventory and stack signals)
@@ -175,7 +175,7 @@ If AI context is unavailable or skipped, deterministic output remains available.
 
 ## 10.1 Setup
 ```bash
-cd /tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI
+cd <project-root>
 pip install -r requirements.txt
 cp .env.example .env
 ```
@@ -232,4 +232,3 @@ This repository is strong for external technical review because it provides:
 - Unified semantic model for cross-language analysis
 - Governance, lineage, DDD, redundancy, and validation perspectives in one run
 - Auditor-friendly artifact outputs in Markdown + JSON
-
