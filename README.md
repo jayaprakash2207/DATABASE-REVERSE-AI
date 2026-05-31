@@ -98,6 +98,8 @@ python main.py --project ../my-project --skip-ai
 python main.py --project ../my-project --only-extract
 ```
 
+Stops after extraction/model-building steps and skips downstream analysis/report generation.
+
 ### Disable cache
 
 ```bash
@@ -118,7 +120,7 @@ python main.py --project ../my-project --cache-dir ../cache-dir
 
 ## Discovery-only mode
 
-Use this only when you want inventory/stack detection without running the full pipeline:
+Use this when you only need quick stack + file inventory output (`inventory.json`) and do not want to run extraction/analysis steps from `main.py`:
 
 ```bash
 python discovery.py --project ../my-project
