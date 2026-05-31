@@ -38,6 +38,8 @@ Main pipeline (`main.py`) runs:
 10. Validation
 11. AI report generation (optional)
 
+`main.py` already runs discovery as step 1; `discovery.py` is only for standalone discovery runs.
+
 ## Repository structure
 
 ```text
@@ -81,6 +83,8 @@ python main.py --help
 ```bash
 python main.py --project /absolute/path/to/target/project
 ```
+
+`--project` accepts both absolute and relative paths (for example `../my-project`).
 
 ### Deterministic-only run (skip AI)
 
