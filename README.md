@@ -63,7 +63,7 @@ memory/        # Extracted and analysis intermediate artifacts
 ## Setup
 
 ```bash
-cd /path/to/DATABASE-REVERSE-AI
+cd <repository-root>
 pip install -r requirements.txt
 cp .env.example .env
 # set ANTHROPIC_API_KEY in .env if you want AI report generation
