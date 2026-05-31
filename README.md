@@ -1,112 +1,130 @@
-# Enterprise Data Architecture Agent
+# DATABASE-REVERSE-AI
 
-AI-powered system that analyzes legacy enterprise applications and generates
-enterprise-grade Data Architecture artifacts automatically.
+AI-assisted reverse engineering tool that analyzes an existing codebase (and SQL assets) to reconstruct enterprise data architecture artifacts.
 
-## Architecture
+It combines deterministic extraction (entities, APIs, relationships, lineage, governance) with optional AI report generation.
 
+## What it does
+
+- Detects technology stack and architecture hints
+- Extracts entities, value objects, API endpoints, handlers, and relationships
+- Builds an enterprise knowledge graph
+- Runs governance, lineage, redundancy, DDD, validation, and SQL-first analysis
+- Produces review-ready architecture documents in `REVIEW/`
+
+## Supported technologies
+
+Through its adapter + Universal Semantic Model layer, the project supports:
+
+- **.NET** (EF Core, ASP.NET Core)
+- **Java** (Spring/JPA)
+- **Python** (Django/SQLAlchemy/FastAPI/Flask signals)
+- **Node.js** (Express/Sequelize/Mongoose/TypeORM/Prisma signals)
+- **Database-first SQL** (SQL Server, PostgreSQL, MySQL, SQLite signals)
+
+## High-level flow
+
+Main pipeline (`main.py`) runs:
+
+1. Discovery (`REVIEW/inventory.json`)
+2. Technology + layout detection
+3. Entity/API extraction (parallel)
+4. Semantic type resolution
+5. Relationship detection (+ universal relationship enrichment)
+6. Enterprise knowledge graph generation
+7. Governance analysis (+ universal governance)
+8. Lineage, DDD, SQL-first analysis, Roslyn enhancement
+9. Redundancy analysis
+10. Validation
+11. AI report generation (optional)
+
+## Repository structure
+
+```text
+adapters/      # Language/database adapters and registry
+agents/        # AI agent orchestration (M3 data architect)
+core/          # Shared confidence/cache/type/roslyn utilities
+engine/        # Universal relationship/lineage/governance/sql engines
+models/        # Universal Semantic Model (USM)
+parsers/       # Deterministic extractors (entity/api/relationship)
+scripts/       # Analysis/report generation modules
+discovery.py   # Project scanner and inventory generator
+main.py        # End-to-end orchestrator CLI
+REVIEW/        # Final markdown/json outputs
+memory/        # Extracted and analysis intermediate artifacts
 ```
-Legacy Application
-       ↓
-  Parser Layer (Tree-sitter AST)
-       ↓
-  Structured JSON Extraction
-       ↓
-  Relationship Mapping
-       ↓
-  M3 Data Architecture Agent (Claude AI)
-       ↓
-  Validation Engine
-       ↓
-  Enterprise Architecture Outputs
-```
 
-## Project Structure
+## Requirements
 
-```
-enterprise-data-architect/
-├── parsers/
-│   ├── ast_parser.py          # Tree-sitter C# AST parser
-│   ├── entity_extractor.py    # Domain entity detection
-│   ├── api_extractor.py       # API endpoint extraction
-│   └── relationship_detector.py # Relationship graph builder
-├── agents/
-│   └── m3_agent.py            # M3 Claude-powered architect agent
-├── scripts/
-│   ├── lineage_analyzer.py    # Data lineage tracing
-│   ├── governance_detector.py # Governance rule detection
-│   ├── redundancy_analyzer.py # Redundancy analysis
-│   └── validation_engine.py   # Cross-validation engine
-├── skills/
-│   └── m3-data-architect.md   # AI agent skill definition
-├── prompts/
-│   └── m3_architect_prompt.md # Claude prompt template
-├── memory/
-│   ├── extracted/             # Parser outputs (JSON)
-│   └── m3/                    # Architecture artifacts
-├── outputs/                   # Additional exports
-├── main.py                    # Orchestrator + CLI
-└── requirements.txt
-```
+- Python 3.10+
+- Dependencies in `requirements.txt`
+- Optional: Anthropic API key (needed only for AI report step)
 
-## Quick Start
-
-### 1. Install dependencies
+## Setup
 
 ```bash
+cd /tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI
 pip install -r requirements.txt
-```
-
-### 2. Set API key
-
-```bash
 cp .env.example .env
-# Edit .env and add your ANTHROPIC_API_KEY
+# set ANTHROPIC_API_KEY in .env if you want AI report generation
 ```
 
-Or set directly:
-```bash
-set ANTHROPIC_API_KEY=your_key_here   # Windows
-export ANTHROPIC_API_KEY=your_key_here  # Mac/Linux
-```
+## Usage
 
-### 3. Run against eShopOnWeb
+### Show CLI help
 
 ```bash
-python main.py --project ../eShopOnWeb-main
+python main.py --help
 ```
 
-### 4. Run without AI (deterministic only)
+### Run full pipeline
 
 ```bash
-python main.py --project ../eShopOnWeb-main --skip-ai
+python main.py --project /absolute/path/to/target/project
 ```
 
-### 5. Parse only
+### Deterministic-only run (skip AI)
 
 ```bash
-python main.py --project ../eShopOnWeb-main --only-parse
+python main.py --project /absolute/path/to/target/project --skip-ai
 ```
 
-## Outputs
+### Extraction-only run
 
-All artifacts are written to `memory/m3/`:
+```bash
+python main.py --project /absolute/path/to/target/project --only-extract
+```
 
-| File | Format | Contents |
-|------|--------|----------|
-| `schema-catalog.json` | JSON | Complete entity + field catalog with domains |
-| `erd-summary.md` | Markdown | Entity relationship diagram narrative |
-| `governance-report.md` | Markdown | Data validation, constraints, PII/PCI findings |
-| `lineage-report.md` | Markdown | Data flow: API → Service → Repository → DB |
-| `canonical-model.md` | Markdown | Canonical entity definitions per domain |
-| `integration-map.json` | JSON | Cross-domain integration points |
-| `redundancy-analysis.md` | Markdown | Duplicate entities, fields, logic |
-| `validation-report.md` | Markdown | Cross-validation issues + inconsistencies |
-| `run-summary.json` | JSON | Run statistics and output index |
+### Disable cache
 
-## Rules
+```bash
+python main.py --project /absolute/path/to/target/project --no-cache
+```
 
-- **Never hallucinate** relationships — every finding cites `source_file`
-- **Confidence levels:** `confirmed` | `inferred` | `low`
-- **Deterministic extraction first** — AI reasoning on top
-- Uncertain findings are flagged, not silently included
+### Use custom cache directory
+
+```bash
+python main.py --project /absolute/path/to/target/project --cache-dir /absolute/path/to/cache
+```
+
+## Output locations
+
+- `REVIEW/` — final reports (architecture, schema, relationships, governance, lineage, DDD, validation, summary)
+- `memory/extracted/` — extracted intermediate JSON (entities, APIs, relationships, semantic model, graphs)
+- `memory/m3/` — analysis intermediate JSON (governance, lineage, redundancy, validation)
+
+## Discovery-only mode
+
+You can run stack discovery separately:
+
+```bash
+python discovery.py --project /absolute/path/to/target/project
+```
+
+This writes `REVIEW/inventory.json`.
+
+## Notes
+
+- AI step depends on environment configuration and model access.
+- If AI is skipped or unavailable, deterministic reports are still generated.
+- Tree-sitter availability affects parser confidence mode.
