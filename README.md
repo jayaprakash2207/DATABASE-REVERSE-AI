@@ -1,4 +1,4 @@
-# DATABASE-REVERSE-AI
+# Database Reverse AI
 
 AI-assisted reverse engineering tool that analyzes an existing codebase (and SQL assets) to reconstruct enterprise data architecture artifacts.
 
@@ -63,7 +63,6 @@ memory/        # Extracted and analysis intermediate artifacts
 ## Setup
 
 ```bash
-cd <repository-root>
 pip install -r requirements.txt
 cp .env.example .env
 # set ANTHROPIC_API_KEY in .env if you want AI report generation
