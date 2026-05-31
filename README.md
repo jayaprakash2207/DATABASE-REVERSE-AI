@@ -18,9 +18,9 @@ Through its adapter + Universal Semantic Model layer, the project supports:
 
 - **.NET** (EF Core, ASP.NET Core)
 - **Java** (Spring/JPA)
-- **Python** (Django/SQLAlchemy/FastAPI/Flask signals)
-- **Node.js** (Express/Sequelize/Mongoose/TypeORM/Prisma signals)
-- **Database-first SQL** (SQL Server, PostgreSQL, MySQL, SQLite signals)
+- **Python** (Django, SQLAlchemy, FastAPI, Flask)
+- **Node.js** (Express, Sequelize, Mongoose, TypeORM, Prisma)
+- **Database-first SQL** (SQL Server, PostgreSQL, MySQL, SQLite)
 
 ## High-level flow
 
@@ -63,7 +63,7 @@ memory/        # Extracted and analysis intermediate artifacts
 ## Setup
 
 ```bash
-cd /tmp/workspace/jayaprakash2207/DATABASE-REVERSE-AI
+cd /path/to/DATABASE-REVERSE-AI
 pip install -r requirements.txt
 cp .env.example .env
 # set ANTHROPIC_API_KEY in .env if you want AI report generation
