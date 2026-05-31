@@ -175,12 +175,13 @@ If AI context is unavailable or skipped, deterministic output remains available.
 
 ### 10.1 Setup
 ```bash
-cd <project-root>
+cd DATABASE-REVERSE-AI
 pip install -r requirements.txt
 cp .env.example .env
 ```
 
 Set `ANTHROPIC_API_KEY` in `.env` only if you want AI-generated report sections.
+(`DATABASE-REVERSE-AI` above means your local cloned repository directory.)
 
 ### 10.2 Main pipeline
 ```bash
@@ -199,6 +200,10 @@ python main.py --project /absolute/path --cache-dir /absolute/path/to/cache
 ```bash
 python discovery.py --project /absolute/path/to/target/project
 ```
+
+Path note:
+- On Linux/macOS: `/absolute/path/to/project`
+- On Windows: `C:\\absolute\\path\\to\\project`
 
 ---
 
