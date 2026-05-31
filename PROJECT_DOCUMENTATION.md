@@ -56,7 +56,7 @@ The tool supports multi-language, multi-framework extraction through adapters an
 
 ## 4) Core Architecture
 
-## 4.1 High-Level Modules
+### 4.1 High-Level Modules
 - `main.py` — End-to-end orchestrator for the full pipeline
 - `discovery.py` — standalone inventory/stack scanner
 - `adapters/` — technology-specific extractors implementing a shared adapter interface
@@ -67,7 +67,7 @@ The tool supports multi-language, multi-framework extraction through adapters an
 - `agents/` — M3 AI architecture agent for narrative report generation
 - `skills/` + `prompts/` — AI prompt/skill assets used by the agent
 
-## 4.2 Canonical Internal Data Contract (USM)
+### 4.2 Canonical Internal Data Contract (USM)
 The project normalizes extraction output into the Universal Semantic Model, including:
 - `UniversalEntity`
 - `UniversalField`
@@ -173,7 +173,7 @@ If AI context is unavailable or skipped, deterministic output remains available.
 
 ## 10) Execution & CLI Usage
 
-## 10.1 Setup
+### 10.1 Setup
 ```bash
 cd <project-root>
 pip install -r requirements.txt
@@ -182,12 +182,12 @@ cp .env.example .env
 
 Set `ANTHROPIC_API_KEY` in `.env` only if you want AI-generated report sections.
 
-## 10.2 Main pipeline
+### 10.2 Main pipeline
 ```bash
 python main.py --project /absolute/path/to/target/project
 ```
 
-## 10.3 Useful flags
+### 10.3 Useful flags
 ```bash
 python main.py --project /absolute/path --skip-ai
 python main.py --project /absolute/path --only-extract
@@ -195,7 +195,7 @@ python main.py --project /absolute/path --no-cache
 python main.py --project /absolute/path --cache-dir /absolute/path/to/cache
 ```
 
-## 10.4 Discovery-only mode
+### 10.4 Discovery-only mode
 ```bash
 python discovery.py --project /absolute/path/to/target/project
 ```
