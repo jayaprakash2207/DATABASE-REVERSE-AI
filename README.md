@@ -107,7 +107,7 @@ python main.py --project ../my-project --no-cache
 ### Use custom cache directory
 
 ```bash
-python main.py --project ../my-project --cache-dir /absolute/path/to/cache
+python main.py --project ../my-project --cache-dir ../cache-dir
 ```
 
 ## Output locations
